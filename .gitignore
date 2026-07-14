@@ -1,0 +1,39 @@
+# Gradle
+.gradle/
+build/
+*.iml
+.gradle-cache/
+
+# Android Studio / IntelliJ
+.idea/
+captures/
+.cxx/
+local.properties
+*.hprof
+
+# Kotlin
+.kotlin/
+
+# Generated
+**/generated/
+**/build/
+**/.cxx/
+
+# APK / AAB (keep our CorePlan.apk in release/, ignore everything else)
+*.apk
+!release/CorePlan.apk
+*.aab
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Logs
+*.log
+hs_err_pid*.log
+
+# Local
+/local/
+/captures/

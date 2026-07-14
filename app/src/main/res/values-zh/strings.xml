@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CorePlan</string>
+
+    <!-- Bottom navigation -->
+    <string name="nav_home">首页</string>
+    <string name="nav_browse">浏览</string>
+    <string name="nav_search">搜索</string>
+    <string name="nav_favorites">方案</string>
+
+    <!-- Home -->
+    <string name="home_welcome">欢迎使用健身指南</string>
+    <string name="home_exercises_available">共 %1$d 个动作</string>
+
+    <!-- Browse -->
+    <string name="browse_title">浏览</string>
+    <string name="browse_by_body_part">按部位</string>
+    <string name="browse_by_equipment">按器械</string>
+    <string name="browse_exercises_count">%1$d 个动作</string>
+
+    <!-- Search -->
+    <string name="search_title">搜索</string>
+    <string name="search_hint">搜索动作、部位、器械…</string>
+    <string name="search_results">%1$d 个结果</string>
+
+    <!-- Favorites -->
+    <string name="favorites_title">收藏</string>
+    <string name="favorites_empty">还没有收藏</string>
+    <string name="favorites_empty_hint">点击动作上的心形图标即可收藏</string>
+
+    <!-- Exercise detail -->
+    <string name="detail_target">目标肌群</string>
+    <string name="detail_equipment">器械</string>
+    <string name="detail_category">部位</string>
+    <string name="detail_muscle_group">肌群</string>
+    <string name="detail_secondary_muscles">辅助肌群</string>
+    <string name="detail_instructions">动作说明</string>
+    <string name="detail_steps">步骤</string>
+    <string name="detail_gif_unavailable">动图不可用</string>
+    <string name="detail_add_favorite">添加到收藏</string>
+    <string name="detail_remove_favorite">取消收藏</string>
+    <string name="detail_spec_title">建议健身规范</string>
+    <string name="detail_spec_sets">组数</string>
+    <string name="detail_spec_reps">每组次数</string>
+    <string name="detail_spec_rest">组间休息</string>
+    <string name="detail_spec_calories">消耗（约）</string>
+    <string name="detail_spec_reps_unit">次</string>
+    <string name="detail_spec_rest_unit">秒</string>
+    <string name="detail_spec_calories_unit">千卡/分钟</string>
+    <string name="back">返回</string>
+
+    <!-- Settings -->
+    <string name="settings_title">设置</string>
+    <string name="settings_general">关于</string>
+    <string name="settings_version">版本</string>
+    <string name="settings_data_source">数据来源</string>
+    <string name="settings_data_source_value">hasaneyldrm/exercises-dataset</string>
+    <string name="settings_exercise_count">动作数量</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_subtitle">来到你的私人健身动作库，共 %1$d 个动作</string>
+    <string name="onboarding_get_started">开始使用</string>
+
+    <!-- Home / Plans -->
+    <string name="home_today_recommendation">今日推荐</string>
+    <string name="plan_design_source">设计参考来源</string>
+    <string name="plan_source_acs">ACSM（美国运动医学会）体力活动建议</string>
+    <string name="plan_source_who">WHO 全球体力活动指南</string>
+    <string name="plan_source_iom">IOM 营养参考摄入量</string>
+    <string name="plan_source_efsa">EFSA 营养建议</string>
+    <string name="home_my_plans">我的方案</string>
+    <string name="home_new_plan">新建方案</string>
+    <string name="home_plan_exercises_count">%1$d 个动作</string>
+    <string name="home_diet_tip">健康饮食建议</string>
+    <string name="home_diet_text">训练日蛋白质摄入 1.6-2.2 g/kg，多吃蔬菜和优质碳水；非训练日适度减少碳水，脂肪摄入以不饱和脂肪为主。每日饮水 1.5-2.5L。</string>
+    <string name="home_water_label">今日饮水</string>
+    <string name="home_water_count">%1$d / %2$d ml</string>
+    <string name="home_water_drink">喝一口</string>
+    <string name="home_water_cup_size">+250 ml</string>
+    <string name="home_water_reset">重置</string>
+    <string name="home_water_reminder">饮水提醒</string>
+    <string name="home_water_reminder_on">已开启</string>
+    <string name="home_water_reminder_off">未开启</string>
+    <string name="home_water_interval">间隔 %1$d 分钟</string>
+    <string name="home_water_source">来源：US National Academies 推荐</string>
+    <string name="home_plan_type_built_in">内置</string>
+    <string name="home_plan_type_custom">自建</string>
+    <string name="home_plan_default_desc_light">轻度日：适合恢复、刚入门</string>
+    <string name="home_plan_default_desc_moderate">中度日：标准训练，兼顾肌力和心肺</string>
+    <string name="home_plan_default_desc_intense">强度减肥日：高强度偏有氧</string>
+    <string name="home_no_plans">还没有自建方案，点击下方按钮创建一个</string>
+    <string name="home_view_all_plans">查看所有方案</string>
+    <string name="snackbar_added_to_plan">已加入方案「%1$s」</string>
+
+    <!-- About screen -->
+    <string name="about_app_name">健身指南</string>
+    <string name="about_intro_title">简介</string>
+    <string name="about_intro_text">本应用收录了 1,324 个健身动作，涵盖力量训练、有氧、拉伸等。所有 GIF 演示图都来自公开数据集。我们希望本应用能帮助大家方便地查阅动作要点、建立自己的训练计划。</string>
+    <string name="about_open_source_title">开源免费</string>
+    <string name="about_open_source_text">本应用是完全开源、免费的健身参考工具。不接入广告、不收集用户数据、不要求登录。代码在 GitHub 公开，欢迎审查、复用与二次开发。</string>
+    <string name="about_dataset_title">数据集来源</string>
+    <string name="about_dataset_text">动作 GIF 和基础数据来自 GitHub 开源项目 hasaneyldrm/exercises-dataset（共 1,324 个动作，9 种语言支持）。感谢原作者的无私分享。</string>
+    <string name="about_developer_title">开发者</string>
+    <string name="about_developer_text">开发者：Jack Li &amp; Claude\nClaude 负责代码实现，Jack Li 负责需求、测试与质量把控。</string>
+    <string name="about_version_title">版本</string>
+    <string name="about_version">v2.0.0（加入多语言切换）</string>
+    <string name="about_repo_title">GitHub 仓库</string>
+    <string name="about_repo_url">https://github.com/63894696</string>
+    <string name="about_repo_action">在浏览器打开</string>
+    <string name="about_license_title">开源许可</string>
+    <string name="about_license_text">本应用基于 MIT License 开源发布。你可以自由使用、修改、分发，但需保留版权声明。</string>
+    <string name="about_license_url">https://opensource.org/licenses/MIT</string>
+    <string name="about_disclaimer_title">免责声明</string>
+    <string name="about_disclaimer_text">本应用仅供参考，不能替代专业医疗或健身建议。\n\n每个人的身体状况不同，在开始任何训练之前，请先咨询专业医生或认证健身教练。\n\n所有训练动作请在专业指导下进行，循序渐进，避免受伤。\n\n使用本应用产生的任何后果由使用者本人承担，开发者不承担任何责任。</string>
+    <string name="about_donate_title">支持开发者</string>
+    <string name="about_donate_text">如果你觉得这个应用有用，可以请我喝杯咖啡 ☕</string>
+    <string name="about_donate_wechat">微信赞赏码</string>
+    <string name="about_donate_alipay">支付宝收款码</string>
+    <string name="about_donate_paypal">PayPal 赞助（海外用户）</string>
+    <string name="about_donate_paypal_url">https://paypal.me/JackLi5673</string>
+    <string name="about_external_link">外部链接（已在浏览器打开）</string>
+    <string name="about_link_open_failed">打开失败，请手动复制链接到浏览器</string>
+
+    <!-- Body part / equipment (UI 兜底显示名。数据本身是英文,显示给用户用这个) -->
+    <string name="bp_waist">腰部</string>
+    <string name="bp_upper_legs">大腿</string>
+    <string name="bp_back">背部</string>
+    <string name="bp_chest">胸部</string>
+    <string name="bp_shoulders">肩部</string>
+    <string name="bp_upper_arms">上臂</string>
+    <string name="bp_lower_legs">小腿</string>
+    <string name="bp_lower_arms">前臂</string>
+    <string name="bp_cardio">有氧</string>
+    <string name="bp_neck">颈部</string>
+
+    <string name="eq_body_weight">自重</string>
+    <string name="eq_dumbbell">哑铃</string>
+    <string name="eq_barbell">杠铃</string>
+    <string name="eq_cable">绳索</string>
+    <string name="eq_kettlebells">壶铃</string>
+    <string name="eq_stability_ball">健身球</string>
+    <string name="eq_ez_barbell">EZ 杠</string>
+    <string name="eq_smith_machine">史密斯机</string>
+    <string name="eq_leverage_machine">力量器械</string>
+    <string name="eq_band">弹力带</string>
+    <string name="eq_weighted">负重</string>
+    <string name="eq_other">其他</string>
+
+    <!-- Target muscle -->
+    <string name="tgt_abs">腹肌</string>
+    <string name="tgt_quads">股四头肌</string>
+    <string name="tgt_hamstrings">腘绳肌</string>
+    <string name="tgt_glutes">臀大肌</string>
+    <string name="tgt_calves">小腿肌</string>
+    <string name="tgt_biceps">肱二头肌</string>
+    <string name="tgt_triceps">肱三头肌</string>
+    <string name="tgt_forearms">前臂</string>
+    <string name="tgt_chest">胸肌</string>
+    <string name="tgt_lats">背阔肌</string>
+    <string name="tgt_traps">斜方肌</string>
+    <string name="tgt_shoulders">三角肌</string>
+    <string name="tgt_pectorals">胸大肌</string>
+    <string name="tgt_serratus_anterior">前锯肌</string>
+    <string name="tgt_adductors">内收肌</string>
+    <string name="tgt_abductors">外展肌</string>
+    <string name="tgt_lats_erector_spinae">下背/竖脊肌</string>
+    <string name="tgt_neck">颈部</string>
+    <string name="tgt_cardiovascular">心肺</string>
+    <string name="tgt_hip_flexors">髋屈肌</string>
+    <string name="tgt_upper_back">上背</string>
+    <string name="tgt_lower_back">下背</string>
+</resources>

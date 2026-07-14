@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CorePlan</string>
+
+    <!-- Bottom navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_browse">Browse</string>
+    <string name="nav_search">Search</string>
+    <string name="nav_favorites">Favorites</string>
+
+    <!-- Home -->
+    <string name="home_welcome">Welcome to Fitness Guide</string>
+    <string name="home_exercises_available">%1$d exercises available</string>
+
+    <!-- Browse -->
+    <string name="browse_title">Browse</string>
+    <string name="browse_by_body_part">By Body Part</string>
+    <string name="browse_by_equipment">By Equipment</string>
+    <string name="browse_exercises_count">%1$d exercises</string>
+
+    <!-- Search -->
+    <string name="search_title">Search</string>
+    <string name="search_hint">Search exercises, body parts, equipment…</string>
+    <string name="search_results">%1$d results</string>
+
+    <!-- Favorites -->
+    <string name="favorites_title">Favorites</string>
+    <string name="favorites_empty">No favorites yet</string>
+    <string name="favorites_empty_hint">Tap the heart icon on an exercise to add it here</string>
+
+    <!-- Exercise detail -->
+    <string name="detail_target">Target</string>
+    <string name="detail_equipment">Equipment</string>
+    <string name="detail_category">Category</string>
+    <string name="detail_muscle_group">Muscle Group</string>
+    <string name="detail_secondary_muscles">Secondary Muscles</string>
+    <string name="detail_instructions">Instructions (%1$s)</string>
+    <string name="detail_steps">Steps (%1$s)</string>
+    <string name="detail_gif_unavailable">GIF unavailable</string>
+    <string name="detail_add_favorite">Add to favorites</string>
+    <string name="detail_remove_favorite">Remove from favorites</string>
+    <string name="detail_spec_title">Suggested workout</string>
+    <string name="detail_spec_sets">Sets</string>
+    <string name="detail_spec_reps">Reps</string>
+    <string name="detail_spec_rest">Rest</string>
+    <string name="detail_spec_calories">Calories</string>
+    <string name="detail_spec_reps_unit">reps</string>
+    <string name="detail_spec_rest_unit">sec</string>
+    <string name="detail_spec_calories_unit">kcal/min</string>
+    <!-- Home / Plans -->
+    <string name="home_today_recommendation">Today\'s recommendation</string>
+    <string name="plan_design_source">Design source</string>
+    <string name="plan_source_acs">ACSM physical activity guidelines</string>
+    <string name="plan_source_who">WHO Global Physical Activity Guidelines</string>
+    <string name="plan_source_iom">IOM Dietary Reference Intakes</string>
+    <string name="plan_source_efsa">EFSA dietary recommendations</string>
+    <string name="home_my_plans">My plans</string>
+    <string name="home_new_plan">New plan</string>
+    <string name="home_plan_exercises_count">%1$d exercises</string>
+    <string name="home_diet_tip">Diet tip</string>
+    <string name="home_diet_text">Diet guidance</string>
+    <string name="home_water_label">Water today</string>
+    <string name="home_water_count">%1$d / %2$d ml</string>
+    <string name="home_water_drink">Drink</string>
+    <string name="home_water_cup_size">+250 ml</string>
+    <string name="home_water_reset">Reset</string>
+    <string name="home_water_reminder">Reminder</string>
+    <string name="home_water_reminder_on">On</string>
+    <string name="home_water_reminder_off">Off</string>
+    <string name="home_water_interval">Every %1$d min</string>
+    <string name="home_water_source">Source: US National Academies</string>
+    <string name="home_plan_type_built_in">Built-in</string>
+    <string name="home_plan_type_custom">Custom</string>
+    <string name="home_no_plans">No custom plans yet</string>
+    <string name="home_view_all_plans">View all plans</string>
+    <string name="snackbar_added_to_plan">Added to plan \"%1$s\"</string>
+
+    <!-- About screen -->
+    <string name="about_app_name">Fitness Guide</string>
+    <string name="about_intro_title">About</string>
+    <string name="about_intro_text">This app catalogs 1,324 fitness exercises covering strength, cardio, and stretching. GIFs and base data come from an open dataset. We hope this helps you build your own training plans.</string>
+    <string name="about_open_source_title">Open Source &amp; Free</string>
+    <string name="about_open_source_text">Fully open source and free. No ads, no data collection, no login required. Code is on GitHub.</string>
+    <string name="about_dataset_title">Dataset</string>
+    <string name="about_dataset_text">GIFs and base data from GitHub project hasaneyldrm/exercises-dataset (1,324 exercises, 9 languages). Thanks to the original author.</string>
+    <string name="about_developer_title">Developer</string>
+    <string name="about_developer_text">Developer: Jack Li &amp; Claude\nClaude implements code, Jack Li drives requirements, testing, and quality.</string>
+    <string name="about_version_title">Version</string>
+    <string name="about_version">v2.0.0 (with multi-language)</string>
+    <string name="about_repo_title">GitHub Repository</string>
+    <string name="about_repo_url">https://github.com/63894696</string>
+    <string name="about_repo_action">Open in browser</string>
+    <string name="about_license_title">Open Source License</string>
+    <string name="about_license_text">Released under MIT License. Free to use, modify, redistribute, with copyright preserved.</string>
+    <string name="about_license_url">https://opensource.org/licenses/MIT</string>
+    <string name="about_disclaimer_title">Disclaimer</string>
+    <string name="about_disclaimer_text">This app is for reference only and does not replace professional medical or fitness advice.\n\nEveryone\'s body is different. Please consult a doctor or certified trainer before starting any program.\n\nPerform all exercises under professional guidance and progress gradually to avoid injury.\n\nYou assume all responsibility for using this app.</string>
+    <string name="about_donate_title">Support Developer</string>
+    <string name="about_donate_text">If this app helps you, buy me a coffee ☕</string>
+    <string name="about_donate_wechat">WeChat</string>
+    <string name="about_donate_alipay">Alipay</string>
+    <string name="about_donate_paypal">PayPal (overseas)</string>
+    <string name="about_donate_paypal_url">https://paypal.me/JackLi5673</string>
+    <string name="about_external_link">External link opened in browser</string>
+    <string name="about_link_open_failed">Failed to open, please copy link manually</string>
+    <string name="back">Back</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_version">Version</string>
+    <string name="settings_data_source">Data source</string>
+    <string name="settings_data_source_value">hasaneyldrm/exercises-dataset</string>
+    <string name="settings_exercise_count">Exercise count</string>
+    <string name="settings_language">Language</string>
+    <string name="settings_theme">Theme</string>
+    <string name="settings_theme_system">Follow system</string>
+    <string name="settings_theme_light">Light</string>
+    <string name="settings_theme_dark">Dark</string>
+    <string name="settings_appearance">Appearance</string>
+    <string name="settings_general">General</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Welcome</string>
+    <string name="onboarding_welcome_subtitle">Your personal exercise library with %1$d exercises</string>
+    <string name="onboarding_language_title">Choose your language</string>
+    <string name="onboarding_language_subtitle">You can change this later in Settings</string>
+    <string name="onboarding_done_title">All set!</string>
+    <string name="onboarding_done_subtitle">Let\'s start training</string>
+    <string name="onboarding_next">Next</string>
+    <string name="onboarding_get_started">Get started</string>
+    <string name="onboarding_skip">Skip</string>
+
+    <!-- Language names (shown in their own language for recognizability) -->
+    <string name="lang_en">English</string>
+    <string name="lang_es">Español</string>
+    <string name="lang_hi">हिन्दी</string>
+    <string name="lang_it">Italiano</string>
+    <string name="lang_ko">한국어</string>
+    <string name="lang_pl">Polski</string>
+    <string name="lang_ru">Русский</string>
+    <string name="lang_tr">Türkçe</string>
+    <string name="lang_zh">中文</string>
+
+    <!-- Misc -->
+    <string name="loading">Loading…</string>
+    <string name="coming_soon">Coming soon</string>
+</resources>
