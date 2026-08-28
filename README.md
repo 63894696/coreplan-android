@@ -1,97 +1,141 @@
-# CorePlan
+# oi_enhancements / Prisir AI
 
-> 免登录免费的健身动作指导 Android App。提供 1,324 个动作 GIF 演示、DIY 训练计划、饮水提醒。
+> **Prisir(湃睿思) AI** — 本地对话式 AI 助手,免登录,系统级 Agent,本地优先。
 
-[📥 下载最新 APK](https://github.com/63894696/coreplan-android/releases) · [🐛 反馈问题](https://github.com/63894696/coreplan-android/issues)
+这是 `oi_enhancements` 仓库,包含 Prisir AI、oiagent、prisr_findex、
+prisr_fcontent、fastlane、aureon 等子项目。
 
----
+更详细的架构说明请阅读 [ARCHITECTURE-2026-07-03.md](./ARCHITECTURE-2026-07-03.md)
+与 [INVENTORY-2026-07-03.md](./INVENTORY-2026-07-03.md)。仓库根目录还有
+按子项目组织的 `docs/` 目录,提供设计与计划文档。
 
-## ✨ 主要功能
 
-- 🏋️ **1,324 个健身动作** — 含 GIF 演示 + 步骤说明 + 目标肌群
-- 🌍 **9 种语言** — 中文（默认）/ English / Español / Italiano / हिन्दी / 한국어 / Polski / Русский / Türkçe
-- 🗓️ **DIY 训练计划** — 自建月度/季度计划，组数/次数/休息时间都可调
-- 💧 **饮水提醒** — 系统闹钟 + 倒计时 + 次数，简洁无开关
-- ⭐ **3 个内置方案** — 轻度日 / 中度日 / 强度减肥日
-- 🔒 **完全本地** — 无登录、无数据收集、无广告
+## 子项目概览
 
-## 📸 截图
+| 子项目 | 说明 |
+| ------ | ---- |
+| `oiagent_web.py` | 主 Web 后端(国画风聊天 UI + LLM 路由 + SQLite 持久化) |
+| `oiagent-shell/` | Electron 对话壳(系统托盘常驻,全局热键,自启动) |
+| `prisir_findex/` | Rust 本机文件搜索引擎(类 Everything,只索引元数据) |
+| `prisir_fcontent/` | 文件内容索引与 OCR(支持翻译、截图识图) |
+| `fastlane/` | LLM provider 路由(Anthropic / OpenAI / 兼容 API) |
+| `aureon/` | 端侧 Agent 核心模块 |
+| `crypto_conduit/` | token / 加密通道 |
+| `e2e_share_a2h/`, `e2e_share_rot/` | 配对 / 局域网 / 遥控 |
+| `assets/` | 项目图标与 UI 资源(受 TRADEMARKS.md 约束) |
+| `installer/` | 安装/卸载脚本(Windows NSIS + Linux bash) |
+| `docs/` | 设计与计划文档 |
 
-(在 assets/screenshots/ 下)
+## 平台
 
-## 📥 安装
+- **Windows**:NSIS 安装包(`installer/PrisirAI-Setup-*.exe`)。
+- **Linux**:Debian/Ubuntu bash 安装脚本(`installer/linux-install.sh`),
+  X11 + GTK(测试于 Debian 13 + xfwm4)。
+- **macOS**:未测试,代码路径已尽量跨平台但需用户自行打包。
 
-下载最新 `CorePlan.apk`（约 22 MB）→ 在手机"文件管理"中点击 → 允许"未知来源安装" → 完成。
 
-最低系统要求：Android 7.0 (API 24)
+## License
 
-## 🛠 技术栈
+OI Enhancements is available for **personal non-commercial use** under
+the **OI Enhancements Personal and Commercial Source License v1.0
+(OIE-PCS-1.0)**.
 
-- **Kotlin 1.9** + **Jetpack Compose** + **Material 3**
-- **Hilt** 依赖注入
-- **Room** 数据库（仅本地存储）
-- **Coroutines** + **StateFlow**
-- **Coil** GIF 加载（从 CDN 流式获取）
-- **AlarmManager** + **Notification** 饮水提醒
+- **Commercial use**, organizational deployment, paid services,
+  commercial distribution, and integration into commercial products
+  require a separate written commercial license from the Project
+  Copyright Holder. See [COMMERCIAL-LICENSE.md](./COMMERCIAL-LICENSE.md).
+- **Modifications to designated Core Components** (see
+  [CORE-COMPONENTS.md](./CORE-COMPONENTS.md)) must be made available
+  under OIE-PCS-1.0 when Distributed or made available as a Network
+  Service.
+- **Brand and trademarks** — including the names "Prisir AI",
+  "oiagent", "prisraiclass", the Prisir flame logo, and the icons in
+  `assets/` — are **not** licensed by OIE-PCS-1.0. See
+  [TRADEMARKS.md](./TRADEMARKS.md).
+- **Past versions** may be additionally available under the Apache
+  License 2.0. See [LICENSE-POLICY.md](./LICENSE-POLICY.md) for the
+  delayed permissive licensing strategy.
 
-## 🏗 项目结构
+SPDX-License-Identifier: `LicenseRef-OI-Enhancements-PCS-1.0`
 
-```
-app/
-├── src/main/
-│   ├── java/com/example/fitness/
-│   │   ├── data/         # Room + 业务逻辑
-│   │   ├── ui/           # Compose 屏幕
-│   │   │   ├── home/     # 首页（方案 + 饮水）
-│   │   │   ├── browse/   # 动作浏览
-│   │   │   ├── search/   # 搜索
-│   │   │   ├── favorites/ # 我的方案
-│   │   │   ├── plans/    # 方案详情/编辑/新建
-│   │   │   ├── exercise/ # 动作详情
-│   │   │   ├── settings/ # 关于/赞助
-│   │   │   ├── components/
-│   │   │   └── theme/    # 颜色/排版
-│   │   ├── notifications/ # 饮水提醒 Receiver
-│   │   └── i18n/         # 多语言
-│   ├── res/raw/exercises.json
-│   ├── res/values-zh/strings.xml
-│   └── assets/exercise_names_zh.json
-└── build.gradle.kts
-```
+> **Note**: OIE-PCS-1.0 is **not** an OSI-approved open source
+> license because it restricts Commercial Use and reserves Brand
+> rights. It is a source-available license with a commercial
+> licensing pathway.
 
-## 📚 数据来源
+### Legal framework (current version)
 
-- 动作 GIF 数据：[hasaneyldrm/exercises-dataset](https://github.com/hasaneyldrm/exercises-dataset) （1,324 动作，9 语言，多谢作者开源）
-- GIF 媒体 URL：`https://static.exercisedb.dev/media/{media_id}.gif`
-- 饮水量推荐：US National Academies of Sciences, Engineering, and Medicine 2004 报告
-  - 男：3.7 L / 天（含食物水约 20%，纯饮水 2.5-3.0 L）
-  - 女：2.7 L / 天（纯饮水 2.0-2.5 L）
-  - 本应用默认 2.5 L / 天（即 2500 ml）
+- **Governing law**: laws of the Hong Kong Special Administrative
+  Region (HK SAR).
+- **Dispute resolution**: arbitration administered by the Hong Kong
+  International Arbitration Centre (HKIAC), seat Hong Kong.
+- **Language of arbitration**: English, with right to submit
+  Chinese-language evidence without translation at the tribunal's
+  discretion.
+- **Commercial license defaults**: 1-year term; devices/users per
+  executed agreement; minor-version upgrades included; major-version
+  upgrades by paid addendum.
+- **Breach**: 30-day written notice + 30-day cure period for general
+  breaches; immediate termination for unlicensed Commercial Use,
+  Brand misuse, undisclosed Core Component modifications, and patent
+  litigation against the Project Copyright Holder.
+- **Enforcement**: arbitral award enforceable under Mainland-HK
+  Reciprocal Enforcement Arrangement (2019), New York Convention
+  (1958), and Hague Judgments Convention (2019/2023).
 
-## ⚠️ 免责声明
+The full 23-section text is in [LICENSE](./LICENSE).
 
-本应用仅供参考，**不能替代专业医疗或健身建议**。
-- 每个人的身体状况不同，**开始任何训练前请先咨询专业医生或认证健身教练**
-- 所有训练动作请在专业指导下进行，循序渐进，避免受伤
-- 使用本应用产生的任何后果由使用者本人承担
+### Per-version licensing summary
 
-## 👥 开发者
+| Version | Primary License | Additional Future License | Status |
+| ------- | --------------- | ------------------------- | ------ |
+| Latest stable (v2.x) | OIE-PCS-1.0 | (none) | Active |
+| v1.x after v2.0 ships | OIE-PCS-1.0 | Apache-2.0 | Legacy Community Release |
+| v0.x and earlier | as published | (none) | Archived |
 
-- **Jack Li** — 需求、产品、测试
-- **Claude** （[Anthropic](https://www.anthropic.com)） — 代码实现
+See [LICENSE-POLICY.md](./LICENSE-POLICY.md) for the detailed policy.
 
-## ☕ 支持
 
-CorePlan 完全免费、无广告。如果你觉得有用，可以请开发者喝杯咖啡：
+## Contributing
 
-| 微信 | 支付宝 | PayPal |
-|:---:|:---:|:---:|
-| 在 App 内"设置 → 关于 → 微信赞赏码"扫码 | 在 App 内"设置 → 关于 → 支付宝收款码"扫码 | https://paypal.me/JackLi5673 |
+See [CONTRIBUTING.md](./CONTRIBUTING.md). All contributions require
+DCO sign-off (`git commit -s`); contributions to Core Components or
+large contributions additionally require a CLA.
 
-## 📜 许可证
 
-[MIT License](LICENSE) — 你可以自由使用、修改、分发，但需保留版权声明。
+## Third-party components
 
----
+See [THIRD-PARTY-NOTICES](./THIRD-PARTY-NOTICES) for the full list
+of Python / Rust / Node.js dependencies and their licenses.
 
-Made with ❤️ by Jack Li & Claude
+
+## Security
+
+Please report security issues privately to the contact listed in
+[COMMERCIAL-LICENSE.md](./COMMERCIAL-LICENSE.md). Do **not** open a
+public GitHub issue for security vulnerabilities.
+
+
+## Trademark and brand use
+
+See [TRADEMARKS.md](./TRADEMARKS.md). Factual references are
+permitted; use of the Brand for commercial purposes requires a
+separate Brand license.
+
+
+## Contact
+
+- GitHub: https://github.com/63894696/oi_enhancements
+- Commercial license inquiries: open a GitHub issue with the
+  `commercial-license` label.
+- See [COMMERCIAL-LICENSE.md](./COMMERCIAL-LICENSE.md) for full
+  contact details.
+
+
+## Copyright
+
+Copyright (c) 2026 63894696. All rights reserved.
+
+The Software is licensed (not sold) under the terms of
+[OIE-PCS-1.0](./LICENSE). Brand elements are reserved under
+[TRADEMARKS.md](./TRADEMARKS.md).
