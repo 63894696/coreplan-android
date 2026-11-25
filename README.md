@@ -1,75 +1,96 @@
-# oi_enhancements / Prisir AI
+# CorePlan
 
-> **Prisir(湃睿思) AI** — 本地对话式 AI 助手,免登录,系统级 Agent,本地优先。
+> 免登录免费的健身动作指导 Android App。提供 1,324 个动作 GIF 演示、DIY 训练计划、饮水提醒。
 
-这是 `oi_enhancements` 仓库,包含 Prisir AI、oiagent、prisr_findex、
-prisr_fcontent、fastlane、aureon 等子项目。
+[📥 下载最新 APK](https://github.com/63894696/coreplan-android/releases) · [🐛 反馈问题](https://github.com/63894696/coreplan-android/issues)
 
-更详细的架构说明请阅读 ARCHITECTURE-2026-07-03.md
-与 INVENTORY-2026-07-03.md。仓库根目录还有
-按子项目组织的 `docs/` 目录,提供设计与计划文档。
+---
 
+## ✨ 主要功能
 
-## 子项目概览
+- 🏋️ **1,324 个健身动作** — 含 GIF 演示 + 步骤说明 + 目标肌群
+- 🌍 **9 种语言** — 中文（默认）/ English / Español / Italiano / हिन्दी / 한국어 / Polski / Русский / Türkçe
+- 🗓️ **DIY 训练计划** — 自建月度/季度计划，组数/次数/休息时间都可调
+- 💧 **饮水提醒** — 系统闹钟 + 倒计时 + 次数，简洁无开关
+- ⭐ **3 个内置方案** — 轻度日 / 中度日 / 强度减肥日
+- 🔒 **完全本地** — 无登录、无数据收集、无广告
 
-| 子项目 | 说明 |
-| ------ | ---- |
-| `oiagent_web.py` | 主 Web 后端(国画风聊天 UI + LLM 路由 + SQLite 持久化) |
-| `oiagent-shell/` | Electron 对话壳(系统托盘常驻,全局热键,自启动) |
-| `prisir_findex/` | Rust 本机文件搜索引擎(类 Everything,只索引元数据) |
-| `prisir_fcontent/` | 文件内容索引与 OCR(支持翻译、截图识图) |
-| `fastlane/` | LLM provider 路由(Anthropic / OpenAI / 兼容 API) |
-| `aureon/` | 端侧 Agent 核心模块 |
-| `crypto_conduit/` | token / 加密通道 |
-| `e2e_share_a2h/`, `e2e_share_rot/` | 配对 / 局域网 / 遥控 |
-| `assets/` | 项目图标与 UI 资源(受 TRADEMARKS.md 约束) |
-| `installer/` | 安装/卸载脚本(Windows NSIS + Linux bash) |
-| `docs/` | 设计与计划文档 |
+## 📸 截图
 
-## 平台
+(在 assets/screenshots/ 下)
 
-- **Windows**:NSIS 安装包(`installer/PrisirAI-Setup-*.exe`)。
-- **Linux**:Debian/Ubuntu bash 安装脚本(`installer/linux-install.sh`),
-  X11 + GTK(测试于 Debian 13 + xfwm4)。
-- **macOS**:未测试,代码路径已尽量跨平台但需用户自行打包。
+## 📥 安装
 
-## License
+下载最新 `CorePlan.apk`（约 22 MB）→ 在手机"文件管理"中点击 → 允许"未知来源安装" → 完成。
 
-**GNU Affero General Public License v3.0 or later** — see [LICENSE](LICENSE).
+最低系统要求：Android 7.0 (API 24)
 
-Attribution is required, and derivative works must remain open source, including
-when the software is only offered as a network service (AGPL §13). What is
-covered, what keeps its own license, and the commercial-exception path are
-described in [LICENSING.md](LICENSING.md).
+## 🛠 技术栈
 
-## Contributing
+- **Kotlin 1.9** + **Jetpack Compose** + **Material 3**
+- **Hilt** 依赖注入
+- **Room** 数据库（仅本地存储）
+- **Coroutines** + **StateFlow**
+- **Coil** GIF 加载（从 CDN 流式获取）
+- **AlarmManager** + **Notification** 饮水提醒
 
-Contributions are welcome. All commits require DCO sign-off (`git commit -s`).
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+## 🏗 项目结构
 
-## Third-party components
+```
+app/
+├── src/main/
+│   ├── java/com/example/fitness/
+│   │   ├── data/         # Room + 业务逻辑
+│   │   ├── ui/           # Compose 屏幕
+│   │   │   ├── home/     # 首页（方案 + 饮水）
+│   │   │   ├── browse/   # 动作浏览
+│   │   │   ├── search/   # 搜索
+│   │   │   ├── favorites/ # 我的方案
+│   │   │   ├── plans/    # 方案详情/编辑/新建
+│   │   │   ├── exercise/ # 动作详情
+│   │   │   ├── settings/ # 关于/赞助
+│   │   │   ├── components/
+│   │   │   └── theme/    # 颜色/排版
+│   │   ├── notifications/ # 饮水提醒 Receiver
+│   │   └── i18n/         # 多语言
+│   ├── res/raw/exercises.json
+│   ├── res/values-zh/strings.xml
+│   └── assets/exercise_names_zh.json
+└── build.gradle.kts
+```
 
-Dependencies keep their own licenses. See [THIRD-PARTY-NOTICES](THIRD-PARTY-NOTICES).
+## 📚 数据来源
 
-## Security
+- 动作 GIF 数据：[hasaneyldrm/exercises-dataset](https://github.com/hasaneyldrm/exercises-dataset) （1,324 动作，9 语言，多谢作者开源）
+- GIF 媒体 URL：`https://static.exercisedb.dev/media/{media_id}.gif`
+- 饮水量推荐：US National Academies of Sciences, Engineering, and Medicine 2004 报告
+  - 男：3.7 L / 天（含食物水约 20%，纯饮水 2.5-3.0 L）
+  - 女：2.7 L / 天（纯饮水 2.0-2.5 L）
+  - 本应用默认 2.5 L / 天（即 2500 ml）
 
-Report vulnerabilities privately through the repository's Security tab.
-Please do not open a public issue for a security problem.
+## ⚠️ 免责声明
 
-## Trademark and brand use
+本应用仅供参考，**不能替代专业医疗或健身建议**。
+- 每个人的身体状况不同，**开始任何训练前请先咨询专业医生或认证健身教练**
+- 所有训练动作请在专业指导下进行，循序渐进，避免受伤
+- 使用本应用产生的任何后果由使用者本人承担
 
-The project name and logo are trademarks of the copyright holder and are not
-granted by the code license. Factual references are permitted.
-See [TRADEMARKS.md](TRADEMARKS.md).
+## 👥 开发者
 
-## Contact
+- **Jack Li** — 需求、产品、测试
+- **Claude** （[Anthropic](https://www.anthropic.com)） — 代码实现
 
-- Repository: https://github.com/63894696/coreplan-android
-- Commercial licensing: open an issue titled `commercial licensing`.
+## ☕ 支持
 
-## Copyright
+CorePlan 完全免费、无广告。如果你觉得有用，可以请开发者喝杯咖啡：
 
-Copyright (c) 2026 63894696 and contributors.
+| 微信 | 支付宝 | PayPal |
+|:---:|:---:|:---:|
+| 在 App 内"设置 → 关于 → 微信赞赏码"扫码 | 在 App 内"设置 → 关于 → 支付宝收款码"扫码 | https://paypal.me/JackLi5673 |
 
-Licensed under the GNU Affero General Public License v3.0 or later. Brand
-elements are reserved under TRADEMARKS.md.
+## 📜 许可证
+
+**AGPL-3.0-or-later** — 见 [LICENSE](LICENSE)。可使用、修改、分发，需保留署名；若作为网络服务提供，衍生作品亦须开源（AGPL §13）。
+---
+
+Made with ❤️ by Jack Li & Claude
